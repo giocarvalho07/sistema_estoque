@@ -21,11 +21,11 @@ public class EnderecoService {
 		enderecoRepository.save(endereco);
 	}
 	
-	public Endereco enderecoById(Long endereco) {
-		return enderecoRepository.findById(endereco).get();
+	public Endereco enderecoById(Long id) {
+		return enderecoRepository.findById(id).get();
 	}// pesquisar aluno por id
 	
-	public void remover(Endereco endereco) {
+	public void enderecoByDelete(Endereco endereco) {
 		enderecoRepository.delete(endereco);
 	} // remover o aluno
 

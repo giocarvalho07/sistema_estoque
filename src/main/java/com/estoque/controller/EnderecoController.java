@@ -46,7 +46,17 @@ public class EnderecoController {
 		return model;
 	}
 	
+	@GetMapping("deletar-endereco")
+	public ModelAndView deletarEndereco(Long id) {
+		Endereco endereco = enderecoService.enderecoById(id);
+		enderecoService.enderecoByDelete(endereco);
+		ModelAndView model = new ModelAndView("endereco/listEndereco");
+		Iterable<Endereco> enderecoDeletar = enderecoService.enderecoByAll();
+		model.addObject("endereco", enderecoDeletar);
+		return model;
+	}
 	
+
 
 
 }

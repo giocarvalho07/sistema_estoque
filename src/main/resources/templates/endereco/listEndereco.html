@@ -31,7 +31,8 @@
 				<td th:text="${enderecos.id}"> </td>
 				<td th:text="${enderecos.rua}"> </td>
 				<td th:text="${enderecos.bairro}"> </td>
-				<td> <a th:href="@{/editar-endereco/{id} (id=${enderecos.id})}">Editar</a></td>								
+				<td> <a th:href="@{/editar-endereco/{id} (id=${enderecos.id})}">Editar</a></td>
+				<td> <a th:href="${(#mvc.url('EC#deletarEndereco').arg(0, enderecos.id)).build()}" class="btn btn-danger "> deletar </a> </td>								
 			<tr>
 		</table>
 
