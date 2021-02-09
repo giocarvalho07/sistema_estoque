@@ -25,31 +25,20 @@
 	  		</div>
 		</nav>
 		
-		<form   th:action="@{/franquia}" th:object="${franquia}" method="post" >
-			<label>Nome: </label>
-			<input type="text" name="nome" id=nome/>
-			
-			<label>Cnpj: </label>
-			<input type="text" name="cnpj" id=cnpj />
-			
-			
-			<label>Cnpj: </label>
-
-			<select th:field="${franquia.endereco}" required>
-	        	<option value=""> Escolha seu curso </option>
-	        	<option th:each="enderecos: ${endereco}"
-	        			th:value="${enderecos.id}"
-	        			th:text="${enderecos.nome}">
-	        	</option>
-	        </select>
 
 		
-			<input type="submit" />
 		
-		</form>
+			<table>
+				<tr th:each="franquias: ${franquia}">
+					<td th:text="${franquias.cod}"></td>
+					<td th:text="${franquias.nome}"></td>
+					<td th:text="${franquias.cnpj}"></td>
+				</tr>
+			</table>
+		
 
 		<div>
-			<button><a th:href="@{/listar-endereco}"> Vizualizar enderecos </a></button>
+			<button><a th:href="@{/cadastrar-franquias}"> Cadastrar franquias </a></button>
 		</div>
 
 		

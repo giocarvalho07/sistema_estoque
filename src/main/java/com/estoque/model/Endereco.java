@@ -1,5 +1,7 @@
 package com.estoque.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -34,12 +36,6 @@ public class Endereco {
 	@Column(nullable = false, name = "pais")
 	private String pais;
 	
-	
-	@OneToOne(mappedBy = "endereco", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY)
-	private Franquia franquia;
-
-		
 	
 	public Long getId() {
 		return id;
@@ -121,21 +117,6 @@ public class Endereco {
 	}
 
 
-	public Franquia getFranquia() {
-		return franquia;
-	}
-
-
-	public void setFranquia(Franquia franquia) {
-		this.franquia = franquia;
-	}
-
-	@Override
-	public String toString() {
-		return "Endereco [id=" + id + ", rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cep=" + cep
-				+ ", cidade=" + cidade + ", estado=" + estado + ", pais=" + pais + ", franquia=" + franquia.getNome() + "]";
-	}
-
 
 	public Endereco() {
 	}
@@ -143,6 +124,28 @@ public class Endereco {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Endereco [id=" + id + ", rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cep=" + cep
+				+ ", cidade=" + cidade + ", estado=" + estado + ", pais=" + pais + "]";
+	}
+
+
+	public Endereco(Long id, String rua, String numero, String bairro, String cep, String cidade, String estado,
+			String pais) {
+		super();
+		this.id = id;
+		this.rua = rua;
+		this.numero = numero;
+		this.bairro = bairro;
+		this.cep = cep;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.pais = pais;
 	}
 	
 	
