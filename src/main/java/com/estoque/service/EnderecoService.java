@@ -13,11 +13,11 @@ public class EnderecoService {
 	private EnderecoRepository enderecoRepository;
 	
 	
-	public List<Endereco> enderecoByAll(){
+	public List<Endereco> listarEndereco(){
 		return enderecoRepository.findAll();
 	}
 	
-	public void salvar(Endereco endereco) {
+	public void salvarEndereco(Endereco endereco) {
 		enderecoRepository.save(endereco);
 	}
 	

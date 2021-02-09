@@ -1,12 +1,13 @@
 package com.estoque.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "endereco")
-public class Endereco {
+public class Endereco implements Serializable {
 	
     private static final long serialVersionUID = 1L;
 	
@@ -121,32 +122,14 @@ public class Endereco {
 	public Endereco() {
 	}
 
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-
-
 	@Override
 	public String toString() {
 		return "Endereco [id=" + id + ", rua=" + rua + ", numero=" + numero + ", bairro=" + bairro + ", cep=" + cep
 				+ ", cidade=" + cidade + ", estado=" + estado + ", pais=" + pais + "]";
 	}
 
-
-	public Endereco(Long id, String rua, String numero, String bairro, String cep, String cidade, String estado,
-			String pais) {
-		super();
-		this.id = id;
-		this.rua = rua;
-		this.numero = numero;
-		this.bairro = bairro;
-		this.cep = cep;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.pais = pais;
-	}
+  
+	
 	
 	
 	

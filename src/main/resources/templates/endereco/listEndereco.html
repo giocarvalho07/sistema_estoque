@@ -16,27 +16,32 @@
 	  		<div class="collapse navbar-collapse" id="navbarNav">
 	    		<ul class="navbar-nav">
 	      			<li class="nav-item">
-	        			<a class="nav-link" href="/endereco">Cadastrar Endereço</a>
+	        			<a class="nav-link" href="/endereco">Cadastrar Franquia</a>
 	      			</li>
 	      			<li class="nav-item">
-	        			<a class="nav-link" href="/">Exibir carros</a>
+	        			<a class="nav-link" href="/">Exibir</a>
 	      			</li>
 	    		</ul>
 	  		</div>
 		</nav>
 		
+			<table>
+				<tr th:each="enderecos: ${endereco}">
+					<td th:text="${enderecos.id}"></td>
+					<td th:text="${enderecos.rua}"></td>
+					<td th:text="${enderecos.numero}"></td>
+					<td th:text="${enderecos.bairro}"></td>
+					<td th:text="${enderecos.cep}"></td>
+					<td th:text="${enderecos.cidade}"></td>
+					<td th:text="${enderecos.estado}"></td>
+					<td th:text="${enderecos.pais}"></td>
+				</tr>
+			</table>
 		
-		<table>
-			<tr th:each="enderecos: ${endereco}">
-				<td th:text="${enderecos.id}"> </td>
-				<td th:text="${enderecos.rua}"> </td>
-				<td th:text="${enderecos.bairro}"> </td>
-				<td> <a th:href="@{/editar-endereco/{id} (id=${enderecos.id})}">Editar</a></td>
-				<td> <a th:href="${(#mvc.url('EC#deletarEndereco').arg(0, enderecos.id)).build()}" class="btn btn-danger "> deletar </a> </td>								
-			<tr>
-		</table>
 
-
+		<div>
+			<button><a th:href="@{/cadastrar-enderecos}"> Cadastrar enderecos </a></button>
+		</div>
 		
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

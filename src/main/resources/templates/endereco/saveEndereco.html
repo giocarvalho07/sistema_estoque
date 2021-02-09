@@ -16,51 +16,44 @@
 	  		<div class="collapse navbar-collapse" id="navbarNav">
 	    		<ul class="navbar-nav">
 	      			<li class="nav-item">
-	        			<a class="nav-link" href="/endereco">Cadastrar Endereço</a>
+	        			<a class="nav-link" href="/endereco">Cadastrar Franquia</a>
 	      			</li>
 	      			<li class="nav-item">
-	        			<a class="nav-link" href="/">Exibir carros</a>
+	        			<a class="nav-link" href="/">Exibir</a>
 	      			</li>
 	    		</ul>
 	  		</div>
 		</nav>
 		
-		<form th:action="@{/endereco}" method="post"  th:object="${endereco}" >
+		<form method="post" th:object="${endereco}" th:action="@{/cadastrar-enderecos}">
+			<label> Rua </label>
+			<input type="text" name="rua" id=rua />
 			
-			<label class="text-primary" > Id </label> 
-			<span class="text-primary" th:text="${endereco.id}"></span>
-			<input class="form-control" type="hidden" th:field="*{id}" name="id" />
+			<label> Numero </label>
+			<input type="text" name="numero" id=numero />
 			
-			<label>Rua: </label>
-			<input type="text" name="rua" th:field="*{rua}" />
+			<label> Bairro </label>
+			<input type="text" name="bairro" id=bairro />
 			
-			<label>Numero: </label>
-			<input type="text" name="numero" th:field="*{numero}" />
+			<label> Cep </label>
+			<input type="text" name="cep" id=cep />
 			
-			<label>Bairro: </label>
-			<input type="text" name="bairro" th:field="*{bairro}"/>
+			<label> Cidade </label>
+			<input type="text" name="cidade" id=cidade/>
 			
-			<label>Cep: </label>
-			<input type="number" name="cep" th:field="*{cep}"/>
+			<label> Estado </label>
+			<input type="text" name="estado" id=estado/>
 			
-			<label>Cidade: </label>
-			<input type="text" name="cidade" th:field="*{cidade}" />
+			<label> Pais </label>
+			<input type="text" name="pais" id=pais/>
 			
-			<label>Estado: </label>
-			<input type="text" name="estado" th:field="*{estado}" />
-			
-			<label>Pais: </label>
-			<input type="text" name="pais" th:field="*{pais}"/>
-
-			<label>Enviar</label>			
-			<input type="submit" />
-			
-		
+			<input type="submit" value="salvar"/>
 		</form>
 		
-		
-	
 
+		<div>
+			<button><a th:href="@{/listar-enderecos}"> Listar enderecos </a></button>
+		</div>
 		
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -25,20 +25,23 @@
 	  		</div>
 		</nav>
 		
+		<form th:action="@{/cadastrar-franquias}" method="post" >
+			<label>Nome: </label>
+			<input type="text" name="nome" id=nome/>
+			
+			<label>Cnpj: </label>
+			<input type="text" name="cnpj" id=cnpj />
+		
+			<input type="submit" />
+		
+		</form>
+		
 
 		
-		
-			<table>
-				<tr th:each="franquias: ${franquia}">
-					<td th:text="${franquias.cod}"></td>
-					<td th:text="${franquias.nome}"></td>
-					<td th:text="${franquias.cnpj}"></td>
-				</tr>
-			</table>
-		
 
+		
 		<div>
-			<button><a th:href="@{/cadastrar-franquias}"> Cadastrar franquias </a></button>
+			<button><a th:href="@{/listar-franquias}"> Vizualizar franquias </a></button>
 		</div>
 
 		

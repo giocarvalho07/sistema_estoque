@@ -19,7 +19,7 @@ public class FranquiaController {
 	@GetMapping("/listar-franquias")
 	public ModelAndView franquiaByAll() {
 		
-		ModelAndView model = new ModelAndView("franquia/saveFranquia");
+		ModelAndView model = new ModelAndView("franquia/listFranquia");
 		model.addObject("franquia", franquiaService.franquiaByAll());
 		return model;
 	}
@@ -27,12 +27,12 @@ public class FranquiaController {
 	@PostMapping("/cadastrar-franquias")
 	public String salvarFranquia(@ModelAttribute Franquia franquia) {
 		franquiaService.salvarFranquia(franquia);
-		return "franquia/listFranquia";
+		return "redirect:/listar-franquias";
 	}
 	
 	@GetMapping("/cadastrar-franquias")
 	public String getsalvarFranquia() {
-		return "franquia/listFranquia";
+		return "franquia/saveFranquia";
 	}
 	
 	
